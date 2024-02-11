@@ -102,10 +102,6 @@ class Message extends Model<Message> {
 
   @BelongsTo(() => Queue)
   queue: Queue;
-  
-  @Default(false)
-  @Column
-  isEdited: boolean;
 }
 
 export default Message;

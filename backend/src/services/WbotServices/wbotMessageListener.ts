@@ -327,7 +327,6 @@ export const getBodyMessage = (msg: proto.IWebMessageInfo): string | null => {
 
     const types = {
       conversation: msg?.message?.conversation,
-	  editedMessage: msg?.message?.editedMessage?.message?.protocolMessage?.editedMessage?.conversation,
       imageMessage: msg.message?.imageMessage?.caption,
       videoMessage: msg.message?.videoMessage?.caption,
       extendedTextMessage: msg.message?.extendedTextMessage?.text,
@@ -843,7 +842,6 @@ const verifyMediaMessage = async (
   }
 
   const body = getBodyMessage(msg);
-  
 
   const messageData = {
     id: msg.key.id,
@@ -906,10 +904,9 @@ export const verifyMessage = async (
   const io = getIO();
   const quotedMsg = await verifyQuotedMessage(msg);
   const body = getBodyMessage(msg);
-  const isEdited = getTypeMessage(msg) == 'editedMessage';
 
   const messageData = {
-    id: isEdited ? msg?.message?.editedMessage?.message?.protocolMessage?.key?.id : msg.key.id,
+    id: msg.key.id,
     ticketId: ticket.id,
     contactId: msg.key.fromMe ? undefined : contact.id,
     body,
@@ -920,8 +917,7 @@ export const verifyMessage = async (
     ack: msg.status,
     remoteJid: msg.key.remoteJid,
     participant: msg.key.participant,
-    dataJson: JSON.stringify(msg),
-	isEdited: isEdited,
+    dataJson: JSON.stringify(msg)
   };
 
   await ticket.update({
@@ -967,7 +963,6 @@ const isValidMsg = (msg: proto.IWebMessageInfo): boolean => {
     const ifType =
       msgType === "conversation" ||
       msgType === "extendedTextMessage" ||
-	  msgType === "editedMessage" ||
       msgType === "audioMessage" ||
       msgType === "videoMessage" ||
       msgType === "imageMessage" ||

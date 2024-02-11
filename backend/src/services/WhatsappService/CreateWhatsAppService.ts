@@ -18,10 +18,8 @@ interface Request {
   isDefault?: boolean;
   token?: string;
   provider?: string;
-  //sendIdQueue?: number;
-  //timeSendQueue?: number;
-  transferQueueId?: number;
-  timeToTransfer?: number;    
+  sendIdQueue?: number;
+  timeSendQueue?: number;
   promptId?: number;
   maxUseBotQueues?: number;
   timeUseBotQueues?: number;
@@ -46,10 +44,8 @@ const CreateWhatsAppService = async ({
   companyId,
   token = "",
   provider = "beta",
-  //timeSendQueue,
-  //sendIdQueue,
-  transferQueueId,
-  timeToTransfer,    
+  timeSendQueue,
+  sendIdQueue,
   promptId,
   maxUseBotQueues = 3,
   timeUseBotQueues = 0,
@@ -157,10 +153,8 @@ const CreateWhatsAppService = async ({
       companyId,
       token,
       provider,
-      //timeSendQueue,
-      //sendIdQueue,
-	  transferQueueId,
-	  timeToTransfer,	  
+      timeSendQueue,
+      sendIdQueue,
       promptId,
       maxUseBotQueues,
       timeUseBotQueues,

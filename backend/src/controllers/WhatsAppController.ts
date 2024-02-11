@@ -20,10 +20,8 @@ interface WhatsappData {
   status?: string;
   isDefault?: boolean;
   token?: string;
-  //sendIdQueue?: number;
-  //timeSendQueue?: number;
-  transferQueueId?: number;
-  timeToTransfer?: number;  
+  sendIdQueue?: number;
+  timeSendQueue?: number;
   promptId?: number;
   maxUseBotQueues?: number;
   timeUseBotQueues?: number;
@@ -53,10 +51,8 @@ export const store = async (req: Request, res: Response): Promise<Response> => {
     outOfHoursMessage,
     queueIds,
     token,
-    //timeSendQueue,
-    //sendIdQueue,
-	transferQueueId,
-	timeToTransfer,
+    timeSendQueue,
+    sendIdQueue,
     promptId,
     maxUseBotQueues,
     timeUseBotQueues,
@@ -75,10 +71,8 @@ export const store = async (req: Request, res: Response): Promise<Response> => {
     queueIds,
     companyId,
     token,
-    //timeSendQueue,
-    //sendIdQueue,
-	transferQueueId,
-	timeToTransfer,	
+    timeSendQueue,
+    sendIdQueue,
     promptId,
     maxUseBotQueues,
     timeUseBotQueues,

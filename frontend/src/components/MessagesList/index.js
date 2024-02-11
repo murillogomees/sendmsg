@@ -190,11 +190,6 @@ const useStyles = makeStyles((theme) => ({
     overflowWrap: "break-word",
     padding: "3px 80px 6px 6px",
   },
-  
-  textContentItemEdited: {
-    overflowWrap: "break-word",
-    padding: "3px 120px 6px 6px",
-  },
 
   textContentItemDeleted: {
     fontStyle: "italic",
@@ -742,7 +737,6 @@ const MessagesList = ({ ticket, ticketId, isGroup }) => {
                   {message.quotedMsg && renderQuotedMessage(message)}
                   <MarkdownWrapper>{message.mediaType === "locationMessage" ? null : message.body}</MarkdownWrapper>
                   <span className={classes.timestamp}>
-				    {message.isEdited && <span>Editada </span>}
                     {format(parseISO(message.createdAt), "HH:mm")}
                   </span>
                 </div>
@@ -772,7 +766,6 @@ const MessagesList = ({ ticket, ticketId, isGroup }) => {
                 <div
                   className={clsx(classes.textContentItem, {
                     [classes.textContentItemDeleted]: message.isDeleted,
-					[classes.textContentItemEdited]: message.isEdited,
                   })}
                 >
                   {message.isDeleted && (
@@ -785,7 +778,6 @@ const MessagesList = ({ ticket, ticketId, isGroup }) => {
                   {message.quotedMsg && renderQuotedMessage(message)}
                   <MarkdownWrapper>{message.body}</MarkdownWrapper>
                   <span className={classes.timestamp}>
-				    {message.isEdited && <span>Editada </span>}
                     {format(parseISO(message.createdAt), "HH:mm")}
                     {renderMessageAck(message)}
                   </span>

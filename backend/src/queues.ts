@@ -94,7 +94,7 @@ async function handleSendMessage(job) {
   }
 }
 
-{/*async function handleVerifyQueue(job) {
+async function handleVerifyQueue(job) {
   logger.info("Buscando atendimentos perdidos nas filas");
   try {
     const companies = await Company.findAll({
@@ -114,9 +114,9 @@ async function handleSendMessage(job) {
           }
         },
       ]
-    }); */}
+    });
 
-{/*    companies.map(async c => {
+    companies.map(async c => {
       c.whatsapps.map(async w => {
 
         if (w.status === "CONNECTED") {
@@ -196,7 +196,7 @@ async function handleSendMessage(job) {
     logger.error("SearchForQueue -> VerifyQueue: error", e.message);
     throw e;
   }
-}; */}
+};
 
 async function handleCloseTicketsAutomatic() {
   const job = new CronJob('*/1 * * * *', async () => {
@@ -888,7 +888,7 @@ export async function startQueueProcess() {
 
   userMonitor.process("VerifyLoginStatus", handleLoginStatus);
 
-  //queueMonitor.process("VerifyQueueStatus", handleVerifyQueue);
+  queueMonitor.process("VerifyQueueStatus", handleVerifyQueue);
 
 
 

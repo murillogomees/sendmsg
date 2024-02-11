@@ -25,7 +25,7 @@ const messages = {
         },
         buttons: {
           submit: "Entrar",
-          register: "Registre-se, agora mesmo!",
+          register: "Não tem um conta? Cadastre-se!",
         },
       },
       plans: {
