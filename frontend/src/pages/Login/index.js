@@ -5,7 +5,7 @@ import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import Link from "@material-ui/core/Link";
-import Grid from "@material-ui/core/Grid"; 
+import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
@@ -21,20 +21,20 @@ const Copyright = () => {
 	return (
 		<Typography variant="body2" color="primary" align="center">
 			{"Copyright "}
- 			<Link color="primary" href="#">
- 				PLW
- 			</Link>{" "}
- 			{new Date().getFullYear()}
- 			{"."}
- 		</Typography>
- 	);
- };
+			<Link color="primary" href="#">
+				PLW
+			</Link>{" "}
+			{new Date().getFullYear()}
+			{"."}
+		</Typography>
+	);
+};
 
 const useStyles = makeStyles(theme => ({
 	root: {
 		width: "100vw",
 		height: "100vh",
-		background: "linear-gradient(to right, #0000FF , #0000CD , #00008B)",
+		background: "linear-gradient(to right, #cbb79f , #938f84 , #7e7d78)",
 		//backgroundImage: "url(https://equipechat.com/imagens/equipechat.jpg)",
 		backgroundRepeat: "no-repeat",
 		backgroundSize: "100% 100%",
@@ -54,7 +54,7 @@ const useStyles = makeStyles(theme => ({
 		borderRadius: "12.5px",
 	},
 	avatar: {
-		margin: theme.spacing(1),  
+		margin: theme.spacing(1),
 		backgroundColor: theme.palette.secondary.main,
 	},
 	form: {
@@ -87,69 +87,69 @@ const Login = () => {
 
 	return (
 		<div className={classes.root}>
-		<Container component="main" maxWidth="xs">
-			<CssBaseline/>
-			<div className={classes.paper}>
-				<div>
-					<img style={{ margin: "0 auto", width: "100%" }} src={logo} alt="Whats" />
-				</div>
-				{/*<Typography component="h1" variant="h5">
+			<Container component="main" maxWidth="xs">
+				<CssBaseline />
+				<div className={classes.paper}>
+					<div>
+						<img style={{ margin: "0 auto", width: "100%" }} src={logo} alt="Whats" />
+					</div>
+					{/*<Typography component="h1" variant="h5">
 					{i18n.t("login.title")}
 				</Typography>*/}
-				<form className={classes.form} noValidate onSubmit={handlSubmit}>
-					<TextField
-						variant="outlined"
-						margin="normal"
-						required
-						fullWidth
-						id="email"
-						label={i18n.t("login.form.email")}
-						name="email"
-						value={user.email}
-						onChange={handleChangeInput}
-						autoComplete="email"
-						autoFocus
-					/>
-					<TextField
-						variant="outlined"
-						margin="normal"
-						required
-						fullWidth
-						name="password"
-						label={i18n.t("login.form.password")}
-						type="password"
-						id="password"
-						value={user.password}
-						onChange={handleChangeInput}
-						autoComplete="current-password"
-					/>
-					<Button
-						type="submit"
-						fullWidth
-						variant="contained"
-						color="primary"
-						className={classes.submit}
-					>
-						{i18n.t("login.buttons.submit")}
-					</Button>
-					{ <Grid container>
-						<Grid item>
-							<Link
-								href="#"
-								variant="body2"
-								component={RouterLink}
-								to="/signup"
-							>
-								{i18n.t("login.buttons.register")}
-							</Link>
-						</Grid>
-					</Grid> }
-				</form>
-			
-			</div>
-			
-			
-		</Container>
+					<form className={classes.form} noValidate onSubmit={handlSubmit}>
+						<TextField
+							variant="outlined"
+							margin="normal"
+							required
+							fullWidth
+							id="email"
+							label={i18n.t("login.form.email")}
+							name="email"
+							value={user.email}
+							onChange={handleChangeInput}
+							autoComplete="email"
+							autoFocus
+						/>
+						<TextField
+							variant="outlined"
+							margin="normal"
+							required
+							fullWidth
+							name="password"
+							label={i18n.t("login.form.password")}
+							type="password"
+							id="password"
+							value={user.password}
+							onChange={handleChangeInput}
+							autoComplete="current-password"
+						/>
+						<Button
+							type="submit"
+							fullWidth
+							variant="contained"
+							color="primary"
+							className={classes.submit}
+						>
+							{i18n.t("login.buttons.submit")}
+						</Button>
+						{<Grid container>
+							<Grid item>
+								<Link
+									href="#"
+									variant="body2"
+									component={RouterLink}
+									to="/signup"
+								>
+									{i18n.t("login.buttons.register")}
+								</Link>
+							</Grid>
+						</Grid>}
+					</form>
+
+				</div>
+
+
+			</Container>
 		</div>
 	);
 };
