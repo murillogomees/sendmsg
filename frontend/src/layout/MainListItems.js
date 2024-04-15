@@ -306,13 +306,7 @@ const MainListItems = (props) => {
                   primary="Kanban"
                   icon={<LoyaltyRoundedIcon />}
                 />
-              )}
-
-                <ListItemLink
-              to="/queues"
-              primary="Filas"}
-              icon={<AccountTreeOutlinedIcon />}
-            />
+              )}              
                <ListItemLink
                 to="/tags"
                 primary={i18n.t("mainDrawer.listItems.tags")}
@@ -462,6 +456,11 @@ const MainListItems = (props) => {
                 primary={i18n.t("mainDrawer.listItems.queueIntegration")}
                 icon={<DeviceHubOutlined />}
               />
+                    <ListItemLink
+              to="/queues"
+              primary="Filas"}
+              icon={<AccountTreeOutlinedIcon />}
+            />
             )}       
             {showExternalApi && (
               <>
