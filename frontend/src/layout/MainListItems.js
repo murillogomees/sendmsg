@@ -270,6 +270,7 @@ const MainListItems = (props) => {
         }}
         no={() => (
           <>
+          
             <ListSubheader
               hidden={collapsed}
               style={{
@@ -284,9 +285,19 @@ const MainListItems = (props) => {
             </ListSubheader>
             <>
 
+               <ListItemLink
+              to="/connections"
+              primary="Nº de Whatsapp"}
+              icon={
+                <Badge badgeContent={connectionWarning ? "!" : 0} color="error">
+                  <SyncAltIcon />
+                </Badge>
+              }
+            />
+
               <ListItemLink
                 to="/tickets"
-                primary={i18n.t("mainDrawer.listItems.tickets")}
+                primary="Conversas"}
                 icon={<WhatsAppIcon />}
               />             
               {showKanban && (
@@ -296,20 +307,18 @@ const MainListItems = (props) => {
                   icon={<LoyaltyRoundedIcon />}
                 />
               )}
+
+                <ListItemLink
+              to="/queues"
+              primary="Filas"}
+              icon={<AccountTreeOutlinedIcon />}
+            />
                <ListItemLink
                 to="/tags"
                 primary={i18n.t("mainDrawer.listItems.tags")}
                 icon={<LocalOfferIcon />}
-              />               
-              {showSchedules && (
-                <>
-                  <ListItemLink
-                    to="/schedules"
-                    primary={i18n.t("mainDrawer.listItems.schedules")}
-                    icon={<Schedule />}
-                  />
-                </>
-              )}              
+              />              
+                          
               {showInternalChat && (
                 <>
                   <ListItemLink
@@ -390,7 +399,7 @@ const MainListItems = (props) => {
                     <EventAvailableIcon />
                   </ListItemIcon>
                   <ListItemText
-                    primary={i18n.t("mainDrawer.listItems.campaigns")}
+                    primary="Mensagem Programada"}
                   />
                   {openCampaignSubmenu ? (
                     <ExpandLessIcon />
@@ -433,19 +442,18 @@ const MainListItems = (props) => {
                 </Collapse>
               </>
             )}
-            {user.super && (
-              <ListItemLink
-                to="/announcements"
-                primary={i18n.t("mainDrawer.listItems.annoucements")}
-                icon={<AnnouncementIcon />}
-              />
+                {showSchedules && (
+                <>
+                  <ListItemLink
+                    to="/schedules"
+                    primary={i18n.t("mainDrawer.listItems.schedules")}
+                    icon={<Schedule />}
+                  />
+                </>
+              )}  
+            {user.super && (              
             )}
-            {showOpenAi && (
-              <ListItemLink
-                to="/prompts"
-                primary={i18n.t("mainDrawer.listItems.prompts")}
-                icon={<AllInclusive />}
-              />
+            {showOpenAi && (              
             )}
 
             {showIntegrations && (
@@ -454,31 +462,7 @@ const MainListItems = (props) => {
                 primary={i18n.t("mainDrawer.listItems.queueIntegration")}
                 icon={<DeviceHubOutlined />}
               />
-            )}
-            <ListItemLink
-              to="/connections"
-              primary={i18n.t("mainDrawer.listItems.connections")}
-              icon={
-                <Badge badgeContent={connectionWarning ? "!" : 0} color="error">
-                  <SyncAltIcon />
-                </Badge>
-              }
-            />
-            <ListItemLink
-              to="/files"
-              primary={i18n.t("mainDrawer.listItems.files")}
-              icon={<AttachFile />}
-            />
-            <ListItemLink
-              to="/queues"
-              primary={i18n.t("mainDrawer.listItems.queues")}
-              icon={<AccountTreeOutlinedIcon />}
-            />
-            <ListItemLink
-              to="/users"
-              primary={i18n.t("mainDrawer.listItems.users")}
-              icon={<PeopleAltOutlinedIcon />}
-            />
+            )}       
             {showExternalApi && (
               <>
                 <ListItemLink
@@ -493,7 +477,11 @@ const MainListItems = (props) => {
               primary={i18n.t("mainDrawer.listItems.financeiro")}
               icon={<LocalAtmIcon />}
             />
-
+            <ListItemLink
+              to="/users"
+              primary={i18n.t("mainDrawer.listItems.users")}
+              icon={<PeopleAltOutlinedIcon />}
+            />
             <ListItemLink
               to="/settings"
               primary={i18n.t("mainDrawer.listItems.settings")}
