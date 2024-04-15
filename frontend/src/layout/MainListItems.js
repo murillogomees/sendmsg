@@ -289,11 +289,11 @@ const MainListItems = (props) => {
                 primary={i18n.t("mainDrawer.listItems.tickets")}
                 icon={<WhatsAppIcon />}
               />
-              // <ListItemLink
-              //   to="/quick-messages"
-              //   primary={i18n.t("mainDrawer.listItems.quickMessages")}
-              //   icon={<FlashOnIcon />}
-              // />
+              <ListItemLink
+                to="/quick-messages"
+                primary={i18n.t("mainDrawer.listItems.quickMessages")}
+                icon={<FlashOnIcon />}
+              />
               {showKanban && (
                 <ListItemLink
                   to="/kanban"
@@ -301,11 +301,11 @@ const MainListItems = (props) => {
                   icon={<LoyaltyRoundedIcon />}
                 />
               )}
-              // <ListItemLink
-              //   to="/todolist"
-              //   primary={i18n.t("Tarefas")}
-              //   icon={<BorderColorIcon />}
-              // />
+              <ListItemLink
+                to="/todolist"
+                primary={i18n.t("Tarefas")}
+                icon={<BorderColorIcon />}
+              />
               <ListItemLink
                 to="/contacts"
                 primary={i18n.t("mainDrawer.listItems.contacts")}
