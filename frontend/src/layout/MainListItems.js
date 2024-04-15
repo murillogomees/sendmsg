@@ -288,12 +288,7 @@ const MainListItems = (props) => {
                 to="/tickets"
                 primary={i18n.t("mainDrawer.listItems.tickets")}
                 icon={<WhatsAppIcon />}
-              />
-              // <ListItemLink
-              //   to="/quick-messages"
-              //   primary={i18n.t("mainDrawer.listItems.quickMessages")}
-              //   icon={<FlashOnIcon />}
-              // />
+              />             
               {showKanban && (
                 <ListItemLink
                   to="/kanban"
@@ -301,16 +296,11 @@ const MainListItems = (props) => {
                   icon={<LoyaltyRoundedIcon />}
                 />
               )}
-              // <ListItemLink
-              //   to="/todolist"
-              //   primary={i18n.t("Tarefas")}
-              //   icon={<BorderColorIcon />}
-              // />
-              <ListItemLink
-                to="/contacts"
-                primary={i18n.t("mainDrawer.listItems.contacts")}
-                icon={<ContactPhoneOutlinedIcon />}
-              />
+               <ListItemLink
+                to="/tags"
+                primary={i18n.t("mainDrawer.listItems.tags")}
+                icon={<LocalOfferIcon />}
+              />               
               {showSchedules && (
                 <>
                   <ListItemLink
@@ -319,12 +309,7 @@ const MainListItems = (props) => {
                     icon={<Schedule />}
                   />
                 </>
-              )}
-              <ListItemLink
-                to="/tags"
-                primary={i18n.t("mainDrawer.listItems.tags")}
-                icon={<LocalOfferIcon />}
-              />
+              )}              
               {showInternalChat && (
                 <>
                   <ListItemLink
@@ -335,13 +320,14 @@ const MainListItems = (props) => {
                         <ForumIcon />
                       </Badge>
                     }
+                  
                   />
                 </>
               )}
               <ListItemLink
-                to="/helps"
-                primary={i18n.t("mainDrawer.listItems.helps")}
-                icon={<HelpOutlineIcon />}
+                to="/contacts"
+                primary={i18n.t("mainDrawer.listItems.contacts")}
+                icon={<ContactPhoneOutlinedIcon />}
               />
             </>
           </>
