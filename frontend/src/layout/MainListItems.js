@@ -354,7 +354,7 @@ const MainListItems = (props) => {
 							}}
 							inset
 							color="inherit">
-							{i18n.t("mainDrawer.listItems.administration")}
+							Módulos
 						</ListSubheader>
 
 						{showCampaigns && (
@@ -367,7 +367,7 @@ const MainListItems = (props) => {
 										<EventAvailableIcon />
 									</ListItemIcon>
 									<ListItemText
-										primary="Mensagem Programada"
+										primary="Programada"
 									/>
 									{openCampaignSubmenu ? (
 										<ExpandLessIcon />
@@ -458,8 +458,8 @@ const MainListItems = (props) => {
 							}}
 							inset
 							color="inherit">
-							{i18n.t("Gerência")}
-						</ListSubheader>
+							  Administrador
+							</ListSubheader>
 						<ListItemLink
 							small
 							to="/"
