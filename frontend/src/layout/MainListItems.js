@@ -338,39 +338,6 @@ const MainListItems = (props) => {
 					</>
 				)}
 			/>
-
-			<Can
-				role={user.profile}
-				perform={"drawer-admin-items:view"}
-				yes={() => (
-					<>
-						<Divider />
-						<ListSubheader
-							hidden={collapsed}
-							style={{
-								position: "relative",
-								fontSize: "17px",
-								textAlign: "left",
-								paddingLeft: 20
-							}}
-							inset
-							color="inherit">
-							{i18n.t("Gerência")}
-						</ListSubheader>
-						<ListItemLink
-							small
-							to="/"
-							primary="Dashboard"
-							icon={<DashboardOutlinedIcon />}
-						/>
-						<ListItemLink
-							to="/users"
-							primary={i18n.t("mainDrawer.listItems.users")}
-							icon={<PeopleAltOutlinedIcon />}
-						/>
-					</>
-				)}
-			/>
 			<Can
 				role={user.profile}
 				perform="drawer-admin-items:view"
@@ -400,7 +367,7 @@ const MainListItems = (props) => {
 										<EventAvailableIcon />
 									</ListItemIcon>
 									<ListItemText
-										primary={i18n.t("mainDrawer.listItems.campaigns")}
+										primary="Mensagem Programada"
 									/>
 									{openCampaignSubmenu ? (
 										<ExpandLessIcon />
@@ -459,7 +426,7 @@ const MainListItems = (props) => {
 								icon={<DeviceHubOutlined />}
 							/>
 						)}
-					
+
 						{showExternalApi && (
 							<>
 								<ListItemLink
@@ -469,6 +436,41 @@ const MainListItems = (props) => {
 								/>
 							</>
 						)}
+						{ }
+
+					</>
+				)}
+			/>
+
+			<Can
+				role={user.profile}
+				perform={"drawer-admin-items:view"}
+				yes={() => (
+					<>
+						<Divider />
+						<ListSubheader
+							hidden={collapsed}
+							style={{
+								position: "relative",
+								fontSize: "17px",
+								textAlign: "left",
+								paddingLeft: 20
+							}}
+							inset
+							color="inherit">
+							{i18n.t("Gerência")}
+						</ListSubheader>
+						<ListItemLink
+							small
+							to="/"
+							primary="Dashboard"
+							icon={<DashboardOutlinedIcon />}
+						/>
+						<ListItemLink
+							to="/users"
+							primary={i18n.t("mainDrawer.listItems.users")}
+							icon={<PeopleAltOutlinedIcon />}
+						/>
 						<ListItemLink
 							to="/financeiro"
 							primary={i18n.t("mainDrawer.listItems.financeiro")}
@@ -480,11 +482,10 @@ const MainListItems = (props) => {
 							primary={i18n.t("mainDrawer.listItems.settings")}
 							icon={<SettingsOutlinedIcon />}
 						/>
-						{ }
-
 					</>
 				)}
 			/>
+
 			<Divider />
 			<li>
 				<ListItem
