@@ -306,16 +306,6 @@ const MainListItems = (props) => {
 									icon={<LoyaltyRoundedIcon />}
 								/>
 							)}
-
-							{showSchedules && (
-								<>
-									<ListItemLink
-										to="/schedules"
-										primary={i18n.t("mainDrawer.listItems.schedules")}
-										icon={<Schedule />}
-									/>
-								</>
-							)}
 							<ListItemLink
 								to="/queues"
 								primary={i18n.t("mainDrawer.listItems.queues")}
@@ -372,6 +362,11 @@ const MainListItems = (props) => {
 							to="/"
 							primary="Dashboard"
 							icon={<DashboardOutlinedIcon />}
+						/>
+						<ListItemLink
+							to="/users"
+							primary={i18n.t("mainDrawer.listItems.users")}
+							icon={<PeopleAltOutlinedIcon />}
 						/>
 					</>
 				)}
@@ -448,21 +443,15 @@ const MainListItems = (props) => {
 								</Collapse>
 							</>
 						)}
-						{user.super && (
-							<ListItemLink
-								to="/announcements"
-								primary={i18n.t("mainDrawer.listItems.annoucements")}
-								icon={<AnnouncementIcon />}
-							/>
+						{showSchedules && (
+							<>
+								<ListItemLink
+									to="/schedules"
+									primary={i18n.t("mainDrawer.listItems.schedules")}
+									icon={<Schedule />}
+								/>
+							</>
 						)}
-						{showOpenAi && (
-							<ListItemLink
-								to="/prompts"
-								primary={i18n.t("mainDrawer.listItems.prompts")}
-								icon={<AllInclusive />}
-							/>
-						)}
-
 						{showIntegrations && (
 							<ListItemLink
 								to="/queue-integration"
@@ -470,17 +459,7 @@ const MainListItems = (props) => {
 								icon={<DeviceHubOutlined />}
 							/>
 						)}
-						<ListItemLink
-							to="/files"
-							primary={i18n.t("mainDrawer.listItems.files")}
-							icon={<AttachFile />}
-						/>
-
-						<ListItemLink
-							to="/users"
-							primary={i18n.t("mainDrawer.listItems.users")}
-							icon={<PeopleAltOutlinedIcon />}
-						/>
+					
 						{showExternalApi && (
 							<>
 								<ListItemLink
