@@ -287,17 +287,18 @@ const MainListItems = (props) => {
 							<ListItemLink
 								to="/connections"
 								primary="Whatapp"
-								icon={
-									<Badge badgeContent={connectionWarning ? "!" : 0} color="error">
-										<SyncAltIcon />
-									</Badge>
-								}
+								icon={<WhatsAppIcon/>}
+
 							/>
 
 							<ListItemLink
 								to="/tickets"
 								primary="Conversas"
-								icon={<WhatsAppIcon />}
+								icon={
+									<Badge badgeContent={connectionWarning ? "!" : 0} color="error">
+										<SyncAltIcon />
+									</Badge>
+								}
 							/>
 							{showKanban && (
 								<ListItemLink
