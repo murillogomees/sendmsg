@@ -286,7 +286,7 @@ const MainListItems = (props) => {
 
 							<ListItemLink
 								to="/connections"
-								primary={i18n.t("mainDrawer.listItems.connections")}
+								primary="Nº Whatapp"
 								icon={
 									<Badge badgeContent={connectionWarning ? "!" : 0} color="error">
 										<SyncAltIcon />
@@ -296,7 +296,7 @@ const MainListItems = (props) => {
 
 							<ListItemLink
 								to="/tickets"
-								primary={i18n.t("mainDrawer.listItems.tickets")}
+								primary="Conversas"
 								icon={<WhatsAppIcon />}
 							/>
 							<ListItemLink
